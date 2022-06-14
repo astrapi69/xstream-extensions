@@ -1,7 +1,7 @@
 /**
  * The MIT License
  *
- * Copyright (C) 2021 Asterios Raptis
+ * Copyright (C) 2015 Asterios Raptis
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -22,8 +22,52 @@
  * OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
-package io.github.astrapi69;
+package io.github.astrapi69.xstream.factory;
 
-public class InitialTemplate
+
+import org.junit.jupiter.api.Test;
+import org.meanbean.test.BeanTester;
+
+import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.io.xml.StaxDriver;
+
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+
+/**
+ * The unit test class for the class {@link XStreamFactory}
+ */
+public class XStreamFactoryTest
 {
+
+	/**
+	 * Test method for {@link XStreamFactory#newXStream()}
+	 */
+	@Test
+	public void testNewXStream()
+	{
+		XStream xStream = XStreamFactory.newXStream();
+		assertNotNull(xStream);
+	}
+
+	/**
+	 * Test method for
+	 * {@link XStreamFactory#newXStream(com.thoughtworks.xstream.io.HierarchicalStreamDriver)}
+	 */
+	@Test
+	public void testNewXStreamWithHierarchicalStreamDriver()
+	{
+		XStream xStream = XStreamFactory.newXStream(new StaxDriver());
+		assertNotNull(xStream);
+	}
+
+	/**
+	 * Test method for {@link XStreamFactory}
+	 */
+	@Test
+	public void testWithBeanTester()
+	{
+		final BeanTester beanTester = new BeanTester();
+		beanTester.testBean(XStreamFactory.class);
+	}
+
 }
