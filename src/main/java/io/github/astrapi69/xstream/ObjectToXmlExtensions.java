@@ -76,8 +76,7 @@ public class ObjectToXmlExtensions
 	 *            the aliases
 	 * @return the xml string
 	 */
-	public static <T> String toXml(final T objectToXML,
-		final Map<String, Class<?>> aliases)
+	public static <T> String toXml(final T objectToXML, final Map<String, Class<?>> aliases)
 	{
 		return toXml(null, objectToXML, aliases);
 	}

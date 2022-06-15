@@ -3,7 +3,7 @@ package io.github.astrapi69.xstream;
 import io.github.astrapi69.xml.api.ObjectToXml;
 import lombok.NonNull;
 
-public class ObjectToXmlConverter  implements ObjectToXml
+public class ObjectToXmlConverter implements ObjectToXml
 {
 
 	/**
