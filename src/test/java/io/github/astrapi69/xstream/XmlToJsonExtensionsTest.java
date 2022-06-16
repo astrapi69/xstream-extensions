@@ -1,7 +1,7 @@
 /**
  * The MIT License
  *
- * Copyright (C) 2015 Asterios Raptis
+ * Copyright (C) 2021 Asterios Raptis
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -24,6 +24,8 @@
  */
 package io.github.astrapi69.xstream;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
 import java.util.Map;
 
 import org.junit.jupiter.api.Test;
@@ -33,8 +35,6 @@ import io.github.astrapi69.collections.map.MapFactory;
 import io.github.astrapi69.test.object.Employee;
 import io.github.astrapi69.test.object.Person;
 import io.github.astrapi69.test.object.enumtype.Gender;
-
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 /**
  * The unit test class for the class {@link XmlToJsonExtensions}
