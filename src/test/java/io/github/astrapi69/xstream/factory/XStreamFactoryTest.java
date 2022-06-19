@@ -27,17 +27,41 @@ package io.github.astrapi69.xstream.factory;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.junit.jupiter.api.Test;
 import org.meanbean.test.BeanTester;
 
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.xml.StaxDriver;
 
+import io.github.astrapi69.test.object.Employee;
+import io.github.astrapi69.test.object.Person;
+
 /**
  * The unit test class for the class {@link XStreamFactory}
  */
 public class XStreamFactoryTest
 {
+
+	/**
+	 * Test method for {@link XStreamFactory#newXStream(XStream, Map, String...)}
+	 */
+	@Test
+	public void testNewXStreamMapString()
+	{
+		XStream xStream;
+		Map<String, Class<?>> aliases;
+
+		aliases = new HashMap<>();
+		aliases.put("employee", Employee.class);
+		aliases.put("person", Person.class);
+
+		xStream = XStreamFactory.newXStream(XStreamFactory.newXStream(), aliases, "java.**",
+			"javax.**");
+		assertNotNull(xStream);
+	}
 
 	/**
 	 * Test method for {@link XStreamFactory#newXStream()}
