@@ -26,7 +26,10 @@ package io.github.astrapi69.xstream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
+import io.github.astrapi69.test.object.Employee;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.meanbean.test.BeanTester;
 
 class XmlToObjectConverterTest
 {
@@ -59,5 +62,32 @@ class XmlToObjectConverterTest
 		XmlToObjectConverter xmlToObjectConverter = new XmlToObjectConverter();
 		actual = xmlToObjectConverter.toObject(xml);
 		assertEquals(expected, actual);
+	}
+
+
+	/**
+	 * Test method for {@link ObjectToXmlConverter#toXml(Object)}
+	 */
+	@Test
+	public void testToObjectWithNullValue()
+	{
+		String actual;
+		String expected;
+		XmlToObjectConverter xmlToObjectConverter = new XmlToObjectConverter();
+		NullPointerException nullPointerException = Assertions
+			.assertThrows(NullPointerException.class, () -> xmlToObjectConverter.toObject(null));
+		expected = "xmlString is marked non-null but is null";
+		actual = nullPointerException.getMessage();
+		assertEquals(expected, actual);
+	}
+
+	/**
+	 * Test method for {@link XmlToObjectConverter}
+	 */
+	@Test
+	public void testWithBeanTester()
+	{
+		final BeanTester beanTester = new BeanTester();
+		beanTester.testBean(XmlToObjectConverter.class);
 	}
 }

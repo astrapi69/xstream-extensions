@@ -76,7 +76,7 @@ public final class XStreamFactory
 	public static XStream newXStream(XStream xstream, Map<String, Class<?>> aliases,
 		String... allowTypesByWildcard)
 	{
-		if (allowTypesByWildcard != null && 0 < allowTypesByWildcard.length)
+		if (0 < allowTypesByWildcard.length)
 		{
 			xstream.addPermission(new WildcardTypePermission(allowTypesByWildcard));
 		}
