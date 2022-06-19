@@ -64,6 +64,23 @@ public class XStreamFactoryTest
 	}
 
 	/**
+	 * Test method for {@link XStreamFactory#newXStream(XStream, Map, String...)}
+	 */
+	@Test
+	public void testNewXStreamMapStringWithNoVarArgs()
+	{
+		XStream xStream;
+		Map<String, Class<?>> aliases;
+
+		aliases = new HashMap<>();
+		aliases.put("employee", Employee.class);
+		aliases.put("person", Person.class);
+
+		xStream = XStreamFactory.newXStream(XStreamFactory.newXStream(), aliases);
+		assertNotNull(xStream);
+	}
+
+	/**
 	 * Test method for {@link XStreamFactory#newXStream()}
 	 */
 	@Test
