@@ -43,7 +43,7 @@ public class ObjectToXmlConverterTest
 	 * Test method for {@link ObjectToXmlConverter#toXml(Object)}
 	 */
 	@Test
-	public void testObjectToXmlWithNull()
+	public void testObjectToXml()
 	{
 		String actual;
 		String expected;
