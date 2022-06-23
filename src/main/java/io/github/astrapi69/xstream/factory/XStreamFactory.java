@@ -30,7 +30,10 @@ import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.HierarchicalStreamDriver;
 import com.thoughtworks.xstream.security.WildcardTypePermission;
 
-
+/**
+ * The factory class {@link XStreamFactory} for creating {@link XStream} objects for serializing
+ * java beans to xml string and back
+ */
 public final class XStreamFactory
 {
 	private XStreamFactory()
@@ -63,16 +66,35 @@ public final class XStreamFactory
 		return xstream;
 	}
 
+	/**
+	 * Factory method for create a new {@link XStream} object
+	 */
 	public static XStream newXStream()
 	{
 		return new XStream();
 	}
 
+	/**
+	 * Factory method for create a new {@link XStream} object
+	 *
+	 * @param hierarchicalStreamDriver
+	 *            the {@link HierarchicalStreamDriver} object
+	 */
 	public static XStream newXStream(HierarchicalStreamDriver hierarchicalStreamDriver)
 	{
 		return new XStream(hierarchicalStreamDriver);
 	}
 
+	/**
+	 * Factory method for create a new {@link XStream} object
+	 *
+	 * @param xstream
+	 *            the {@link XStream} object
+	 * @param aliases
+	 *            the aliases map
+	 * @param allowTypesByWildcard
+	 *            the allowed types by wildcard
+	 */
 	public static XStream newXStream(XStream xstream, Map<String, Class<?>> aliases,
 		String... allowTypesByWildcard)
 	{

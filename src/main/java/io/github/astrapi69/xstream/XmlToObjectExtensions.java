@@ -43,7 +43,7 @@ public final class XmlToObjectExtensions
 	}
 
 	/**
-	 * Creates from the given xml string an java object.
+	 * Creates from the given xml string a java object.
 	 *
 	 * @param <T>
 	 *            the generic type of the return type
