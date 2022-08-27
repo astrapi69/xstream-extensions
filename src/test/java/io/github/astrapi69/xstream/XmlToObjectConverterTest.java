@@ -26,7 +26,6 @@ package io.github.astrapi69.xstream;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-import io.github.astrapi69.test.object.Employee;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.meanbean.test.BeanTester;
@@ -63,7 +62,6 @@ class XmlToObjectConverterTest
 		actual = xmlToObjectConverter.toObject(xml);
 		assertEquals(expected, actual);
 	}
-
 
 	/**
 	 * Test method for {@link ObjectToXmlConverter#toXml(Object)}

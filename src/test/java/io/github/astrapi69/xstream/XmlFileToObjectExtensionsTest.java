@@ -69,7 +69,7 @@ public class XmlFileToObjectExtensionsTest
 		actual = XmlFileToObjectExtensions.toObject(xmlFile);
 		assertNotNull(actual);
 		expected = employee;
-		assertEquals(actual, expected);
+		assertEquals(expected, actual);
 	}
 
 	/**
@@ -93,7 +93,7 @@ public class XmlFileToObjectExtensionsTest
 		actual = XmlFileToObjectExtensions.toObject(XStreamFactory.newXStream(), xmlFile);
 		assertNotNull(actual);
 		expected = employee;
-		assertEquals(actual, expected);
+		assertEquals(expected, actual);
 	}
 
 	/**
@@ -122,7 +122,7 @@ public class XmlFileToObjectExtensionsTest
 		actual = XmlFileToObjectExtensions.toObject(xmlFile, aliases);
 		assertNotNull(actual);
 		expected = employee;
-		assertEquals(actual, expected);
+		assertEquals(expected, actual);
 	}
 
 	/**
@@ -151,7 +151,7 @@ public class XmlFileToObjectExtensionsTest
 		actual = XmlFileToObjectExtensions.toObject(XStreamFactory.newXStream(), xmlFile, aliases);
 		assertNotNull(actual);
 		expected = employee;
-		assertEquals(actual, expected);
+		assertEquals(expected, actual);
 	}
 
 	/**
@@ -181,7 +181,7 @@ public class XmlFileToObjectExtensionsTest
 			aliases);
 		assertNotNull(actual);
 		expected = employee;
-		assertEquals(actual, expected);
+		assertEquals(expected, actual);
 	}
 
 	/**

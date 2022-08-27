@@ -64,6 +64,7 @@ public class XmlToObjectExtensionsTest
 		xmlString = "<io.github.astrapi69.test.object.Employee>\n" + "  <id>23</id>\n"
 			+ "  <person>\n" + "    <about/>\n" + "    <gender>FEMALE</gender>\n"
 			+ "    <married/>\n" + "    <name>Anna</name>\n" + "    <nickname/>\n" + "  </person>\n"
+			+ "  <subOrdinates class=\"empty-set\"/>\n"
 			+ "</io.github.astrapi69.test.object.Employee>\n";
 
 		actual = XmlToObjectExtensions.toObject(xmlString);
@@ -94,7 +95,8 @@ public class XmlToObjectExtensionsTest
 
 		xmlString = "<Employee>\n" + "  <id>23</id>\n" + "  <person>\n" + "    <about/>\n"
 			+ "    <gender>FEMALE</gender>\n" + "    <married/>\n" + "    <name>Anna</name>\n"
-			+ "    <nickname/>\n" + "  </person>\n" + "</Employee>\n";
+			+ "    <nickname/>\n" + "  </person>\n" + "  <subOrdinates class=\"empty-set\"/>\n"
+			+ "</Employee>\n";
 
 		actual = XmlToObjectExtensions.toObject(xmlString, aliases);
 		assertNotNull(actual);

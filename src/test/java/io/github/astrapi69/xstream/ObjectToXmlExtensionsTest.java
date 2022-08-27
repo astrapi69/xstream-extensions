@@ -71,9 +71,10 @@ public class ObjectToXmlExtensionsTest
 		actual = ObjectToXmlExtensions.toXml(employee);
 		expected = "<io.github.astrapi69.test.object.Employee>\n" + "  <id>23</id>\n"
 			+ "  <person>\n" + "    <gender>FEMALE</gender>\n" + "    <name>Anna</name>\n"
-			+ "  </person>\n" + "</io.github.astrapi69.test.object.Employee>";
+			+ "  </person>\n" + "  <subOrdinates class=\"empty-set\"/>\n"
+			+ "</io.github.astrapi69.test.object.Employee>";
 		assertNotNull(actual);
-		assertEquals(actual, expected);
+		assertEquals(expected, actual);
 	}
 
 	/**
@@ -106,7 +107,7 @@ public class ObjectToXmlExtensionsTest
 		actual = ObjectToXmlExtensions.toXml(employee, aliases);
 		expected = "<employee>\n" + "  <id>23</id>\n" + "  <person>\n"
 			+ "    <gender>FEMALE</gender>\n" + "    <name>Anna</name>\n" + "  </person>\n"
-			+ "</employee>";
+			+ "  <subOrdinates class=\"empty-set\"/>\n" + "</employee>";
 		assertEquals(expected, actual);
 
 		// new scenario ...
@@ -152,9 +153,10 @@ public class ObjectToXmlExtensionsTest
 		actual = ObjectToXmlExtensions.toXml(new XStream(), employee);
 		expected = "<io.github.astrapi69.test.object.Employee>\n" + "  <id>23</id>\n"
 			+ "  <person>\n" + "    <gender>FEMALE</gender>\n" + "    <name>Anna</name>\n"
-			+ "  </person>\n" + "</io.github.astrapi69.test.object.Employee>";
+			+ "  </person>\n" + "  <subOrdinates class=\"empty-set\"/>\n"
+			+ "</io.github.astrapi69.test.object.Employee>";
 		assertNotNull(actual);
-		assertEquals(actual, expected);
+		assertEquals(expected, actual);
 	}
 
 	/**
@@ -187,7 +189,7 @@ public class ObjectToXmlExtensionsTest
 		actual = ObjectToXmlExtensions.toXml(new XStream(), employee, aliases);
 		expected = "<employee>\n" + "  <id>23</id>\n" + "  <person>\n"
 			+ "    <gender>FEMALE</gender>\n" + "    <name>Anna</name>\n" + "  </person>\n"
-			+ "</employee>";
+			+ "  <subOrdinates class=\"empty-set\"/>\n" + "</employee>";
 		assertEquals(expected, actual);
 
 		// new scenario ...

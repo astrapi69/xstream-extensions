@@ -31,7 +31,7 @@ import java.util.Map;
 import org.junit.jupiter.api.Test;
 import org.meanbean.test.BeanTester;
 
-import io.github.astrapi69.collections.map.MapFactory;
+import io.github.astrapi69.collection.map.MapFactory;
 import io.github.astrapi69.test.object.Employee;
 import io.github.astrapi69.test.object.Person;
 import io.github.astrapi69.test.object.enumtype.Gender;
@@ -63,15 +63,15 @@ public class XmlToJsonExtensionsTest
 		xmlResult = ObjectToXmlExtensions.toXml(employee);
 		actual = XmlToJsonExtensions.toJson(xmlResult);
 		expected = "{\"io.github.astrapi69.test.object.Employee\":{\"id\":23,\"person\":{\"about\":\"\",\"gender\":\"FEMALE\",\"married\":false,\"name\":\"Anna\",\"nickname\":\"\"}}}";
-		assertEquals(actual, expected);
+		assertEquals(expected, actual);
 
 		employee = Employee.builder().person(Person.builder().gender(Gender.FEMALE).name("Anna")
 			.married(true).about("Ha ha ha...").nickname("beast").build()).id("23").build();
 		xmlResult = ObjectToXmlExtensions.toXml(employee);
 		actual = XmlToJsonExtensions.toJson(xmlResult);
-		expected = "{\"io.github.astrapi69.test.object.Employee\":{\"id\":23,\"person\":{\"about\":\"Ha ha ha...\",\"gender\":\"FEMALE\",\"married\":true,\"name\":\"Anna\",\"nickname\":\"beast\"}}}";
+		expected = "{\"io.github.astrapi69.test.object.Employee\":{\"id\":23,\"person\":{\"about\":\"Ha ha ha...\",\"gender\":\"FEMALE\",\"married\":true,\"name\":\"Anna\",\"nickname\":\"beast\"},\"subOrdinates\":[{\"@class\":\"empty-set\"}]}}";
 
-		assertEquals(actual, expected);
+		assertEquals(expected, actual);
 	}
 
 	/**
@@ -100,7 +100,7 @@ public class XmlToJsonExtensionsTest
 
 		actual = XmlToJsonExtensions.toJson(xmlResult, aliases);
 		expected = "{\"employee\":{\"id\":23,\"person\":{\"about\":\"\",\"gender\":\"FEMALE\",\"married\":false,\"name\":\"Anna\",\"nickname\":\"\"}}}";
-		assertEquals(actual, expected);
+		assertEquals(expected, actual);
 
 
 		employee = Employee.builder().person(Person.builder().gender(Gender.FEMALE).name("Anna")
@@ -108,8 +108,8 @@ public class XmlToJsonExtensionsTest
 		xmlResult = ObjectToXmlExtensions.toXml(employee);
 
 		actual = XmlToJsonExtensions.toJson(xmlResult, aliases);
-		expected = "{\"employee\":{\"id\":23,\"person\":{\"about\":\"Ha ha ha...\",\"gender\":\"FEMALE\",\"married\":true,\"name\":\"Anna\",\"nickname\":\"beast\"}}}";
-		assertEquals(actual, expected);
+		expected = "{\"employee\":{\"id\":23,\"person\":{\"about\":\"Ha ha ha...\",\"gender\":\"FEMALE\",\"married\":true,\"name\":\"Anna\",\"nickname\":\"beast\"},\"subOrdinates\":[{\"@class\":\"empty-set\"}]}}";
+		assertEquals(expected, actual);
 	}
 
 	/**

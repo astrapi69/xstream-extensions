@@ -59,9 +59,10 @@ public class ObjectToXmlConverterTest
 		actual = objectToXmlConverter.toXml(employee);
 		expected = "<io.github.astrapi69.test.object.Employee>\n" + "  <id>23</id>\n"
 			+ "  <person>\n" + "    <gender>FEMALE</gender>\n" + "    <name>Anna</name>\n"
-			+ "  </person>\n" + "</io.github.astrapi69.test.object.Employee>";
+			+ "  </person>\n" + "  <subOrdinates class=\"empty-set\"/>\n"
+			+ "</io.github.astrapi69.test.object.Employee>";
 		assertNotNull(actual);
-		assertEquals(actual, expected);
+		assertEquals(expected, actual);
 	}
 
 	/**
