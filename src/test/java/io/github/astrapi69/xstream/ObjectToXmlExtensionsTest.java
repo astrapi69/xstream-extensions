@@ -30,9 +30,11 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import io.github.astrapi69.collection.list.ListFactory;
 import org.junit.jupiter.api.Test;
 import org.meanbean.test.BeanTester;
 
@@ -157,6 +159,42 @@ public class ObjectToXmlExtensionsTest
 			+ "</io.github.astrapi69.test.object.Employee>";
 		assertNotNull(actual);
 		assertEquals(expected, actual);
+	}
+
+	/**
+	 * Test method for {@link ObjectToXmlExtensions#toXml(XStream, Object)} with a {@link List}
+	 */
+	@Test
+	public void testToXmlWithXStreamXStreamObjectWithList()
+	{
+		String actual;
+		String expected;
+		Person person;
+		Person person2;
+		List<Person> personList;
+
+		person = Person.builder().gender(Gender.FEMALE).name("Anna").nickname(null).married(null)
+				.about(null).build();
+		person2 = Person.builder().gender(Gender.MALE).name("Anton").nickname(null).married(null)
+				.about(null).build();
+
+		personList = ListFactory.newArrayList(person, person2);
+		actual = ObjectToXmlExtensions.toXml(personList);
+		expected = "<list>\n" +
+				"  <io.github.astrapi69.test.object.Person>\n" +
+				"    <gender>FEMALE</gender>\n" +
+				"    <name>Anna</name>\n" +
+				"  </io.github.astrapi69.test.object.Person>\n" +
+				"  <io.github.astrapi69.test.object.Person>\n" +
+				"    <gender>MALE</gender>\n" +
+				"    <name>Anton</name>\n" +
+				"  </io.github.astrapi69.test.object.Person>\n" +
+				"</list>";
+		assertNotNull(actual);
+		assertEquals(expected, actual);
+
+		List<Person> personList2 = XmlToObjectExtensions.toObject(actual);
+		assertEquals(personList2, personList);
 	}
 
 	/**
