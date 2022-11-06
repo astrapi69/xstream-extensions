@@ -32,6 +32,7 @@ import io.github.astrapi69.xml.api.XmlToGenericObject;
  */
 public class XmlToObjectConverter implements XmlToGenericObject
 {
+
 	/**
 	 * {@inheritDoc}
 	 */

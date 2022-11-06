@@ -27,6 +27,10 @@ package io.github.astrapi69.xstream;
 import lombok.NonNull;
 import io.github.astrapi69.xml.api.ObjectToXml;
 
+/**
+ * The class {@link ObjectToXmlConverter} provides a single method for convert an object to a xml
+ * string
+ */
 public class ObjectToXmlConverter implements ObjectToXml
 {
 

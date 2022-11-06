@@ -30,7 +30,8 @@ import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.json.JettisonMappedXmlDriver;
 
 /**
- * The class {@link XmlToJsonExtensions}.
+ * The class {@link XmlToJsonExtensions} provides methods for convert xml string objects to java
+ * objects
  */
 public final class XmlToJsonExtensions
 {

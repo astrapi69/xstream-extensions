@@ -174,22 +174,18 @@ public class ObjectToXmlExtensionsTest
 		List<Person> personList;
 
 		person = Person.builder().gender(Gender.FEMALE).name("Anna").nickname(null).married(null)
-				.about(null).build();
+			.about(null).build();
 		person2 = Person.builder().gender(Gender.MALE).name("Anton").nickname(null).married(null)
-				.about(null).build();
+			.about(null).build();
 
 		personList = ListFactory.newArrayList(person, person2);
 		actual = ObjectToXmlExtensions.toXml(personList);
-		expected = "<list>\n" +
-				"  <io.github.astrapi69.test.object.Person>\n" +
-				"    <gender>FEMALE</gender>\n" +
-				"    <name>Anna</name>\n" +
-				"  </io.github.astrapi69.test.object.Person>\n" +
-				"  <io.github.astrapi69.test.object.Person>\n" +
-				"    <gender>MALE</gender>\n" +
-				"    <name>Anton</name>\n" +
-				"  </io.github.astrapi69.test.object.Person>\n" +
-				"</list>";
+		expected = "<list>\n" + "  <io.github.astrapi69.test.object.Person>\n"
+			+ "    <gender>FEMALE</gender>\n" + "    <name>Anna</name>\n"
+			+ "  </io.github.astrapi69.test.object.Person>\n"
+			+ "  <io.github.astrapi69.test.object.Person>\n" + "    <gender>MALE</gender>\n"
+			+ "    <name>Anton</name>\n" + "  </io.github.astrapi69.test.object.Person>\n"
+			+ "</list>";
 		assertNotNull(actual);
 		assertEquals(expected, actual);
 
