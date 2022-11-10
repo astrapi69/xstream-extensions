@@ -24,11 +24,11 @@
  */
 package io.github.astrapi69.xstream.factory;
 
-import java.util.Map;
-
 import com.thoughtworks.xstream.XStream;
 import com.thoughtworks.xstream.io.HierarchicalStreamDriver;
 import com.thoughtworks.xstream.security.WildcardTypePermission;
+
+import java.util.Map;
 
 /**
  * The factory class {@link XStreamFactory} for creating {@link XStream} objects for serializing
@@ -68,6 +68,8 @@ public final class XStreamFactory
 
 	/**
 	 * Factory method for create a new {@link XStream} object
+	 *
+	 * @return the new {@link XStream} object
 	 */
 	public static XStream newXStream()
 	{
@@ -79,6 +81,8 @@ public final class XStreamFactory
 	 *
 	 * @param hierarchicalStreamDriver
 	 *            the {@link HierarchicalStreamDriver} object
+	 *
+	 * @return the initialized {@link XStream} object
 	 */
 	public static XStream newXStream(HierarchicalStreamDriver hierarchicalStreamDriver)
 	{
@@ -94,6 +98,8 @@ public final class XStreamFactory
 	 *            the aliases map
 	 * @param allowTypesByWildcard
 	 *            the allowed types by wildcard
+	 *
+	 * @return the initialized {@link XStream} object
 	 */
 	public static XStream newXStream(XStream xstream, Map<String, Class<?>> aliases,
 		String... allowTypesByWildcard)

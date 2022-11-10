@@ -1,8 +1,8 @@
 /**
  * The MIT License
- *
+ * <p>
  * Copyright (C) 2021 Asterios Raptis
- *
+ * <p>
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
  * "Software"), to deal in the Software without restriction, including
@@ -10,10 +10,10 @@
  * distribute, sublicense, and/or sell copies of the Software, and to
  * permit persons to whom the Software is furnished to do so, subject to
  * the following conditions:
- *
+ * <p>
  * The above copyright notice and this permission notice shall be
  * included in all copies or substantial portions of the Software.
- *
+ * <p>
  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
  * EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
  * MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
@@ -25,29 +25,34 @@
 package io.github.astrapi69.xstream;
 
 import com.thoughtworks.xstream.XStream;
+import io.github.astrapi69.file.write.WriteFileExtensions;
+import io.github.astrapi69.throwable.RuntimeExceptionDecorator;
 import io.github.astrapi69.xstream.factory.XStreamFactory;
+import lombok.NonNull;
 
+import java.io.File;
 import java.util.Map;
 
 /**
- * The class {@link ObjectToXmlExtensions} provides methods for convert java objects to xml string
- * objects
+ * The class {@link ObjectToXmlFileExtensions} provides methods for convert java objects to xml and
+ * save them to file objects
  */
-public class ObjectToXmlExtensions
+public class ObjectToXmlFileExtensions
 {
 
 	/**
-	 * Creates from the given Object an xml string.
+	 * Converts the given object to a xml string and write it to the given file object
 	 *
 	 * @param <T>
 	 *            the generic type of the return type
-	 * @param objectToXML
-	 *            the object to xml
-	 * @return the xml string
+	 * @param object
+	 *            the object to convert to xml
+	 * @param file
+	 *            the file object
 	 */
-	public static <T> String toXml(final T objectToXML)
+	public static <T> void toXml(final @NonNull T object, final @NonNull File file)
 	{
-		return toXml(null, objectToXML);
+		toXml(null, object, file);
 	}
 
 	/**
@@ -59,11 +64,13 @@ public class ObjectToXmlExtensions
 	 *            the xstream object.
 	 * @param objectToXML
 	 *            the object to xml
-	 * @return the xml string
+	 * @param file
+	 *            the file object
 	 */
-	public static <T> String toXml(final XStream xstream, final T objectToXML)
+	public static <T> void toXml(final XStream xstream, final @NonNull T objectToXML,
+		final @NonNull File file)
 	{
-		return toXml(xstream, objectToXML, null);
+		toXml(xstream, objectToXML, null, file);
 	}
 
 	/**
@@ -78,13 +85,14 @@ public class ObjectToXmlExtensions
 	 *            the object to xml
 	 * @param aliases
 	 *            the aliases
-	 * @return the xml string
+	 * @param file
+	 *            the file object
 	 */
-	public static <T> String toXml(XStream xstream, final T objectToXML,
-		final Map<String, Class<?>> aliases)
+	public static <T> void toXml(final XStream xstream, final @NonNull T objectToXML,
+		final Map<String, Class<?>> aliases, final @NonNull File file)
 	{
-		xstream = XStreamFactory.initializeXStream(xstream, aliases);
-		return xstream.toXML(objectToXML);
+		RuntimeExceptionDecorator.decorate(() -> WriteFileExtensions.string2File(file,
+			XStreamFactory.initializeXStream(xstream, aliases).toXML(objectToXML), "UTF-8"));
 	}
 
 	/**
@@ -97,10 +105,13 @@ public class ObjectToXmlExtensions
 	 *            the object to xml
 	 * @param aliases
 	 *            the aliases
-	 * @return the xml string
+	 * @param file
+	 *            the file object
 	 */
-	public static <T> String toXml(final T objectToXML, final Map<String, Class<?>> aliases)
+	public static <T> void toXml(final @NonNull T objectToXML, final Map<String, Class<?>> aliases,
+		final @NonNull File file)
 	{
-		return toXml(null, objectToXML, aliases);
+		toXml(null, objectToXML, aliases, file);
 	}
+
 }
