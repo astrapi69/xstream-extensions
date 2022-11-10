@@ -1,8 +1,8 @@
 <employee>
-  <person>
-    <name>Anna</name>
-    <gender>FEMALE</gender>
-  </person>
-  <id>23</id>
-  <subOrdinates class="empty-set"/>
+    <person>
+        <name>Anna</name>
+        <gender>FEMALE</gender>
+    </person>
+    <id>23</id>
+    <subOrdinates class="empty-set"/>
 </employee>
