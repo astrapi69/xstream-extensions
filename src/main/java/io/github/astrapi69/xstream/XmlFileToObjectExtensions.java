@@ -57,7 +57,7 @@ public final class XmlFileToObjectExtensions
 	{
 		Objects.requireNonNull(xmlFile);
 		return XmlToObjectExtensions.toObject(null,
-			RuntimeExceptionDecorator.decorate(() -> ReadFileExtensions.readFromFile(xmlFile)));
+			RuntimeExceptionDecorator.decorate(() -> ReadFileExtensions.fromFile(xmlFile)));
 	}
 
 	/**
@@ -76,7 +76,7 @@ public final class XmlFileToObjectExtensions
 	{
 		Objects.requireNonNull(xmlFile);
 		return XmlToObjectExtensions.toObject(null,
-			RuntimeExceptionDecorator.decorate(() -> ReadFileExtensions.readFromFile(xmlFile)),
+			RuntimeExceptionDecorator.decorate(() -> ReadFileExtensions.fromFile(xmlFile)),
 			aliases);
 	}
 
@@ -95,8 +95,7 @@ public final class XmlFileToObjectExtensions
 	{
 		Objects.requireNonNull(xmlFile);
 		return XmlToObjectExtensions.toObject(xstream,
-			RuntimeExceptionDecorator.decorate(() -> ReadFileExtensions.readFromFile(xmlFile)),
-			null);
+			RuntimeExceptionDecorator.decorate(() -> ReadFileExtensions.fromFile(xmlFile)), null);
 	}
 
 	/**
@@ -118,7 +117,7 @@ public final class XmlFileToObjectExtensions
 	{
 		Objects.requireNonNull(xmlFile);
 		return XmlToObjectExtensions.toObject(xstream,
-			RuntimeExceptionDecorator.decorate(() -> ReadFileExtensions.readFromFile(xmlFile)),
+			RuntimeExceptionDecorator.decorate(() -> ReadFileExtensions.fromFile(xmlFile)),
 			aliases);
 	}
 
@@ -142,10 +141,8 @@ public final class XmlFileToObjectExtensions
 		final Map<String, Class<?>> aliases)
 	{
 		Objects.requireNonNull(xmlFile);
-		return XmlToObjectExtensions.toObject(xstream,
-			RuntimeExceptionDecorator.decorate(
-				() -> ReadFileExtensions.readFromFile(xmlFile, Charset.forName(charsetName))),
-			aliases);
+		return XmlToObjectExtensions.toObject(xstream, RuntimeExceptionDecorator.decorate(
+			() -> ReadFileExtensions.fromFile(xmlFile, Charset.forName(charsetName))), aliases);
 	}
 
 }
