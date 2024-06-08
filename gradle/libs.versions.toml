@@ -1,37 +1,37 @@
 [versions]
-lombok-version = "1.18.30"
-xstream-version = "1.4.20"
-jettison-version = "1.5.4"
-xml-api-version = "1.4"
 file-worker-version = "11.6"
-throwable-version = "2.3"
-silly-collection-version = "21"
-silly-bean-version = "2"
-test-object-version = "7.2"
-meanbean-version = "3.0.0-M9"
-junit-jupiter-version = "5.10.0"
 gradle-plugin-grgit-version = "5.2.2"
 gradle-plugin-license-version = "0.16.1"
 gradle-plugin-lombok-version = "8.6"
 gradle-plugin-spotless-version = "7.0.0.BETA1"
 gradle-plugin-version-catalog-update-version = "0.8.4"
 gradle-plugin-versions-version = "0.51.0"
+jettison-version = "1.5.4"
+junit-jupiter-version = "5.10.0"
+lombok-version = "1.18.30"
+meanbean-version = "3.0.0-M9"
 mockito-core-version = "5.12.0"
+silly-bean-version = "2"
+silly-collection-version = "21"
+test-object-version = "7.2"
+throwable-version = "2.3"
+xml-api-version = "1.4"
+xstream-version = "1.4.20"
 
 [libraries]
-lombok = { module = "org.projectlombok:lombok", version.ref = "lombok-version"}
-xstream = { module = "com.thoughtworks.xstream:xstream", version.ref = "xstream-version"}
-jettison = { module = "org.codehaus.jettison:jettison", version.ref = "jettison-version"}
-xml-api = { module = "io.github.astrapi69:xml-api", version.ref = "xml-api-version"}
-file-worker = { module = "io.github.astrapi69:file-worker", version.ref = "file-worker-version"}
-throwable = { module = "io.github.astrapi69:throwable", version.ref = "throwable-version"}
-silly-collection = { module = "io.github.astrapi69:silly-collection", version.ref = "silly-collection-version"}
-silly-bean = { module = "io.github.astrapi69:silly-bean", version.ref = "silly-bean-version"}
-test-object = { module = "io.github.astrapi69:test-object", version.ref = "test-object-version"}
-meanbean = { module = "com.github.meanbeanlib:meanbean", version.ref = "meanbean-version"}
-junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit-jupiter-version"}
-junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher"}
+file-worker = { module = "io.github.astrapi69:file-worker", version.ref = "file-worker-version" }
+jettison = { module = "org.codehaus.jettison:jettison", version.ref = "jettison-version" }
+junit-jupiter = { module = "org.junit.jupiter:junit-jupiter", version.ref = "junit-jupiter-version" }
+junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher" }
+lombok = { module = "org.projectlombok:lombok", version.ref = "lombok-version" }
+meanbean = { module = "com.github.meanbeanlib:meanbean", version.ref = "meanbean-version" }
 mockito-core = { module = "org.mockito:mockito-core", version.ref = "mockito-core-version" }
+silly-bean = { module = "io.github.astrapi69:silly-bean", version.ref = "silly-bean-version" }
+silly-collection = { module = "io.github.astrapi69:silly-collection", version.ref = "silly-collection-version" }
+test-object = { module = "io.github.astrapi69:test-object", version.ref = "test-object-version" }
+throwable = { module = "io.github.astrapi69:throwable", version.ref = "throwable-version" }
+xml-api = { module = "io.github.astrapi69:xml-api", version.ref = "xml-api-version" }
+xstream = { module = "com.thoughtworks.xstream:xstream", version.ref = "xstream-version" }
 
 [bundles]
 unit-testing = [
