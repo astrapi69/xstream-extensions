@@ -4,6 +4,11 @@
 Version 2-SNAPSHOT
 -------------
 
+ADDED:
+
+- new libs.versions.toml file for new automatic catalog versions update
+- new test dependency mockito-core
+
 CHANGED:
 
 - update gradle to new version 8.4-rc-1
