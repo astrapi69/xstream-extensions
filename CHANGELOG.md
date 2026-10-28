@@ -24,7 +24,7 @@ CHANGED:
 - update of gradle plugin dependency org.ajoberstar.grgit:grgit-gradle to new minor version 5.2.2
 - update of gradle plugin dependency com.diffplug.spotless:spotless-plugin-gradle to new beta version 7.0.0.BETA1
 - update of dependency xml-api to new minor version 1.4
-- update of dependency xstream to new patch version 1.4.20
+- update of dependency xstream to new patch version 1.4.21, which fixes CVE-2024-47072; release 1.1 shipped with 1.4.19 (#4)
 - update of test dependency test-object to new minor version 7.2
 - update of dependency file-worker to new minor version 11.6
 - update of dependency jettison to new minor version 1.5.4

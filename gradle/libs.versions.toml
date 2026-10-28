@@ -17,7 +17,7 @@ silly-collection-version = "21"
 test-object-version = "7.2"
 throwable-version = "2.3"
 xml-api-version = "1.4"
-xstream-version = "1.4.20"
+xstream-version = "1.4.21"
 
 [libraries]
 file-worker = { module = "io.github.astrapi69:file-worker", version.ref = "file-worker-version" }
