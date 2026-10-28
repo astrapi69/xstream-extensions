@@ -6,6 +6,12 @@ Version 1.2-SNAPSHOT
 
 ADDED:
 
+- releases go to Maven Central through the Central Portal, as in the rest of the family: the
+  `com.gradleup.nmcp` plugin uploads, the maintainer releases each deployment in the Portal, and a
+  `RELEASE-*` tag runs the new `publish.yml`. The OSSRH staging endpoint this project published to
+  is shut down, and its settings are gone; the build no longer needs OSSRH credentials to
+  configure. Signing follows the key: in CI from `GPG_PRIVATE_KEY`, with `GPG_KEY_ID` naming the
+  signing subkey, and a release without a key is refused (#2)
 - new libs.versions.toml file for new automatic catalog versions update
 - new test dependency mockito-core
 
